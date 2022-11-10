@@ -1,6 +1,6 @@
 .trending {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   gap: 30px;
   place-items: center;
   margin: 0 auto;

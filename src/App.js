@@ -6,12 +6,7 @@ import Fall from "./components/Fall";
 import Summer from "./components/Summer";
 import Spring from "./components/Spring";
 import Winter from "./components/Winter";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TrendingAnime from "./components/TrendingAnime";
 import TrendingManga from "./components/TrendingManga";
 import HomePage from "./components/HomePage";
@@ -29,6 +24,8 @@ import Search from "./components/Search";
 import TopAnime from "./components/TopAnime";
 import Notifications from "./components/Notifications";
 import Footer from "./components/Footer";
+import LoggedOutFooter from "./components/LoggedOutFooter";
+import SeasonalFooter from "./components/SeasonalFooter";
 function App() {
   const [filtered, setFiltered] = useState("");
   const [input, setInput] = useState("");
@@ -417,7 +414,16 @@ function App() {
               console.log("you must be logged in")
             )}
           </Routes>
-          {token && <Footer></Footer>}
+          {window.location.pathname === "/winter" ||
+          window.location.pathname === "/summer" ||
+          window.location.pathname === "/spring" ||
+          window.location.pathname === "/fall" ? (
+            <SeasonalFooter></SeasonalFooter>
+          ) : !token ? (
+            <LoggedOutFooter></LoggedOutFooter>
+          ) : (
+            <Footer></Footer>
+          )}
         </Router>
       </div>
     </SearchContext.Provider>

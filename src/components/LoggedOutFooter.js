@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./css/Footer.module.css";
 import { SearchContext } from "../search";
 
-const Footer = () => {
+const LoggedOutFooter = () => {
   const navigate = useNavigate();
   const search = useContext(SearchContext);
   return (
@@ -30,42 +30,12 @@ const Footer = () => {
           </a>
         </div>
         <div className={styles.navigation}>
-          <a href={`/animelist`}>
-            <div className={styles.link}>
-              <i class="fa-solid fa-tv"></i>
-              <span>Anime List</span>
-            </div>
-          </a>
-        </div>
-        <div className={styles.navigation}>
-          <a href={`/mangalist`}>
-            <div className={styles.link}>
-              <i class="fa-solid fa-book"></i>
-              <span>Manga List</span>
-            </div>
-          </a>
-        </div>
-        <div className={styles.navigation}>
-          <a href={`/profile`}>
-            <div className={styles.link}>
-              <i className="fa-solid fa-user"></i>
-              <span>Profile</span>
-            </div>
-          </a>
-        </div>
-        <div className={styles.navigation}>
           <a
-            href="/"
-            onClick={() => {
-              search.removeToken();
-            }}
+            href={`https://anilist.co/api/v2/oauth/authorize?client_id=9494&response_type=token`}
           >
             <div className={styles.link}>
-              <i
-                class={`fa-solid fa-right-from-bracket ${styles.icons}`}
-                style={{ color: "tomato" }}
-              ></i>
-              Log Out
+              <i class="fa-solid fa-right-to-bracket"></i>
+              <span>Log In</span>
             </div>
           </a>
         </div>
@@ -97,4 +67,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default LoggedOutFooter;

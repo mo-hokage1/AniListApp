@@ -1,3 +1,8 @@
+.banne v {
+  border: none;
+  outline: none;
+}
+
 .banner img {
   top: 10rem;
   position: absolute;
@@ -214,7 +219,7 @@
   visibility: visible;
 }
 
-@media screen and (max-width: 741px) {
+@media screen and (max-width: 800px) {
   .banner img {
     top: 0;
   }

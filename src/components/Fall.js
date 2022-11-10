@@ -4,7 +4,6 @@ import { SearchContext } from "../search";
 
 const Fall = () => {
   const [trending, setTrending] = useState([]);
-  const [time, setTime] = useState("");
   const search = useContext(SearchContext);
 
   const showGraphQLData = () => {
@@ -263,7 +262,7 @@ const Fall = () => {
                       </strong>
                     )}
                     <div className="source">
-                      {isFound == true ? (
+                      {isFound === true ? (
                         <span className="sequel">Sequel to {sequelTo}</span>
                       ) : (
                         <span>
@@ -279,16 +278,19 @@ const Fall = () => {
                               <img
                                 src={process.env.PUBLIC_URL + "/happy.png"}
                                 className="face"
+                                alt=""
                               />
                             ) : anime.meanScore > 59 && anime.meanScore < 70 ? (
                               <img
                                 src={process.env.PUBLIC_URL + "/normal.png"}
                                 className="face-normal"
+                                alt=""
                               />
                             ) : (
                               <img
                                 src={process.env.PUBLIC_URL + "/sad.png"}
                                 className="face"
+                                alt=""
                               />
                             )}
                             {anime.meanScore}%
@@ -305,9 +307,9 @@ const Fall = () => {
                                 <img
                                   src={process.env.PUBLIC_URL + "/heart.png"}
                                   className="heart"
+                                  alt="heart"
                                 />
                                 #{ranks?.rank}
-                                {/* {console.log(ranks)} */}
                               </span>
                             ) : (
                               ""

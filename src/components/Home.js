@@ -1,6 +1,10 @@
-import styles from "./css/Home.module.css";
-
+import { useContext } from "react";
+import styles from "./css/HomeTwo.module.css";
+import { SearchContext } from "../search";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate = useNavigate();
+  const search = useContext(SearchContext);
   return (
     <div>
       <nav className={styles.header}>
@@ -25,6 +29,27 @@ const Home = () => {
               />{" "}
             </a>
           </div>
+          <form
+            action=""
+            onSubmit={(e) => {
+              e.preventDefault();
+              search.setSubmitted(true);
+              navigate("/search");
+            }}
+          >
+            <input
+              type="text"
+              className={styles.searchClick}
+              name=""
+              placeholder="search here..."
+              onChange={(e) => {
+                search.setInput(e.target.value);
+              }}
+            />
+            <i
+              className={`fa-solid fa-magnifying-glass ${styles.searchIcon} fa-lg`}
+            ></i>
+          </form>
           <div id="login">
             <button className={styles.button}>
               <a

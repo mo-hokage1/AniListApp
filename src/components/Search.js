@@ -166,29 +166,47 @@ const Search = ({ anime }) => {
                           target="_blank"
                           rel="noreferrer"
                         >
+                          <span></span>
                           <img
-                            src="https://animixplay.to/icon.png"
+                            src="https://i0.wp.com/offlinemodapk.com/wp-content/uploads/2021/04/Animedao-Apk.png?fit=512%2C512&ssl=1"
                             alt=""
                             className={styles.animix}
                           />
                         </a>
                       </div>
                     ) : (
-                      <a
-                        href={`https://mangadex.org/titles?q=${
-                          anime.tttle?.romaji ||
-                          anime.title?.english ||
-                          anime.title?.native
-                        }`}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <img
-                          src="https://mangadex.org/_nuxt/ddb5721c5458b5edc9d6782a5f107119.svg"
-                          alt=""
-                          className={styles.animix}
-                        />
-                      </a>
+                      <div>
+                        <a
+                          href={`https://mangadex.org/titles?q=${
+                            anime.tttle?.romaji ||
+                            anime.title?.english ||
+                            anime.title?.native
+                          }`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img
+                            src="https://mangadex.org/_nuxt/ddb5721c5458b5edc9d6782a5f107119.svg"
+                            alt=""
+                            className={styles.animix}
+                          />
+                        </a>
+                        <a
+                          href={`https://manga4life.com/manga/${
+                            anime.tttle?.romaji ||
+                            anime.title?.english ||
+                            anime.title?.native
+                          }`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img
+                            src={process.env.PUBLIC_URL + "/navbar.brand.png"}
+                            alt=""
+                            className={styles.animix}
+                          />
+                        </a>
+                      </div>
                     )}
                   </div>
                 </div>
